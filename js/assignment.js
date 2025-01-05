@@ -9,27 +9,31 @@ const todos = [
 ];
 
 // Declare your two immutable variables
-let shiftValue = ["Do some coding"];
-let popValue = ["Rake the leaves"];
+let shiftValue = "";
+let popValue = "";
 
 // console.log(todos);
-console.log(todos.toString());
+console.log(todos.toString()); 
 
-console.table(todos); // output the third value using tables
+// console.table(todos); // output the third value using tables
 console.log(todos[2]) 
 console.log(todos[2]); //output the third value 
 
 popValue = todos.pop();
 console.log(todos);   //Removed the last value 
 
-todos.reverse(); //Reversed todos
-console.log(todos); //Output reversed todos
 
-shiftValue = todos.shift(); //Removed the first value 
-console.log(todos) // output it
+// todos.reverse(); //Reversed todos
+// console.log(todos); //Output reversed todos
 
-let todo = todos.concat(shiftValue,popValue); // Added shiftValue and popValue to the end of todos.
-console.log(todo); //output
+// shiftValue = todos.shift(); //Removed the first value 
+// console.log(todos) // output it
+
+// let todo = shiftValue + "" + popValue
+// console.log(todo)
+
+// let todo = todos.concat(shiftValue,popValue); // Added shiftValue and popValue to the end of todos.
+// console.log(todo); //output
 
 
 
@@ -44,27 +48,27 @@ const answerSixEl = document.getElementById("answer-six");
 const submissionBtn = document.getElementById("submission-btn");
 
 function updateAnswerOne() {
-    answerOneEl.textContent = todo.toString();
+    answerOneEl.textContent = todos.toString();
 }
 
 function updateAnswerTwo() {
-answerTwoEl.textContent = todo[2];
+    answerTwoEl.textContent = todos[2];
 }
 
 function removeLastValue() {
-
+   
 }
 
 function removeFirstValue() {
-
+    
 }
 
 function addShiftAndPopValues() {
-
+    
 }
 
 function updateAnswerFour() {
-
+    answerFourEl.textContent = todos.toString();
 }
 
 function reverseTodoList() {
@@ -72,16 +76,21 @@ function reverseTodoList() {
 }
 
 function updateAnswerFive() {
-
+        todos.reverse();
+        answerFiveEl.textContent = todos.toString();
 }
 
 function updateAnswerSix() {
-
+  todos.push(shiftValue, popValue);
+  answerSixEl.textContent = todos.toString();
 }
 
 function render() {
     updateAnswerOne()
     updateAnswerTwo()
+    updateAnswerFour()
+    updateAnswerFive()
+    updateAnswerSix()
 }
 
 submissionBtn.addEventListener("click", function () {
